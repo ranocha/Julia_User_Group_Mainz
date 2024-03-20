@@ -18,6 +18,11 @@ Pkg.instantiate()
 # - https://docs.julialang.org/en/v1/manual/style-guide/
 #
 # if you care about performance.
+#
+# Some additional ressources are
+# - https://github.com/albert-de-montserrat/JuliaMainz23
+# - https://m3g.github.io/JuliaNotes.jl/stable/
+#
 
 
 # ## Example: A linear advection simulation
