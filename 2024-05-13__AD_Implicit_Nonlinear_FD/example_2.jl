@@ -4,6 +4,9 @@
 #   ∂( k * ∂u/∂x )/∂x + ∂( k * ∂u/∂z )/∂z = 0
 # with boundary conditions:
 #   u(0) = 0, u(L) = 100
+#
+# This example is a bit more involved and uses the add-on routines, to allow passing 1 or more fields in 2D to the residual routine
+# We also use the `nonlinear_solution` routine to solve the system of equations (which cinverges in 1 step if it is linear)
 
 using SparseDiffTools, LinearAlgebra
 using Symbolics
@@ -23,7 +26,7 @@ function Res!(Fvec::AbstractVector{T}, UU::Vector{<:AbstractArray{T}}, Δ::NTupl
 
     dx, dz = Δ
     
-    U = UU[1]
+    U = UU[1]       # U is assumed to be the first 
     F = zero(U)
 
     # ∂( kx*∂u/∂x )/∂x + ∂( kz*∂u/∂z )/∂z = 0

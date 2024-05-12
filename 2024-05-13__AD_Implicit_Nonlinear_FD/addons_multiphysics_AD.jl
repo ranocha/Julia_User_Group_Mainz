@@ -46,7 +46,7 @@ function jacobian_sparsity(func::Function, output::AbstractArray{T}, input::Vect
     end
     
     expr = zero(vars)
-    func(expr, vars_vecarray; kwargs...)
+    func(expr, vars; kwargs...)
     return Symbolics.jacobian_sparsity(expr, vars)
 end
 

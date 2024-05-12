@@ -46,7 +46,7 @@ BC       = (; u0, uEnd)
 F        = zero(u)
 
 # Sparsity pattern of jacobian
-sparsity    =   Symbolics.jacobian_sparsity(Res_closed!,F, u)
+sparsity    =   jacobian_sparsity(Res_closed!,F, u)
 J           =   Float64.(sparsity)
 colors      =   matrix_colors(J) 
 
