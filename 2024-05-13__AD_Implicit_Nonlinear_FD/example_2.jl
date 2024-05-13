@@ -6,7 +6,7 @@
 #   u(0) = 0, u(L) = 100
 #
 # This example is a bit more involved and uses the add-on routines, to allow passing 1 or more fields in 2D to the residual routine
-# We also use the `nonlinear_solution` routine to solve the system of equations (which cinverges in 1 step if it is linear)
+# We also use the `nonlinear_solution` routine to solve the system of equations (which converges in 1 step if it is linear)
 
 using SparseDiffTools, LinearAlgebra
 using Symbolics

@@ -6,7 +6,7 @@
 #   u(0) = 0, u(L) = 100
 # and assume that k is either constant or k(x)
 #
-# This example illustrates how we can use automatic differentiaion and sparsity detection to automatically 
+# This example illustrates how we can use automatic differentiaion and sparsity detection to automatically solve the steady state diffusion equations 
 
 using SparseDiffTools, LinearAlgebra
 using Symbolics
