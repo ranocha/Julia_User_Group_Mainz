@@ -2,7 +2,7 @@
 
 The purpose of these examples is to show how we can use a few julia tools to solve nonlinear equations using staggered finite differences and a few tools. The only thing a user need to provide is a residual routine, from which a sparse matrix is automatically extracted.
 
-We will go through the exetcses in the following order 
+We will go through the exercise in the following order 
 
 ### exercise_1.jl
 Solves a 1D steady state heat diffusion with linear coefficients
