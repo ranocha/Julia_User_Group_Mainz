@@ -34,9 +34,9 @@ function Res!(F::AbstractVector{T}, U::Vector{<:AbstractArray{T}}, Δ::NTuple, N
     
     # residual function 1
     # (ϕ-ϕold)/Δt + ϕ^m *Pe + De*(Pe-Pe_old)/Δt 
-    Pe_c     = average(Pe)   
-    Pe_c_old = average(Pe_old)   
-    Fϕ  = (ϕ - ϕold)./Params.Δt + Params.De*(Pe_c-Pe_c_old)/Δt  + ϕ.^m .*Pe_c
+    Pe_c        = average(Pe)   
+    Pe_c_old    = average(Pe_old)   
+    Fϕ          = (ϕ - ϕold)./Params.Δt + Params.De*(Pe_c-Pe_c_old)/Δt  + ϕ.^m .*Pe_c
     
     # residual function 2:
     # De*∂Pe/∂t - ∂( ϕ^n * (∂Pe/∂z + 1) )/∂z + ϕ^m *Pe
@@ -53,9 +53,6 @@ function Res!(F::AbstractVector{T}, U::AbstractVector{T}, Δ, N, BC, Params) whe
     return Res!(F, vec_2_vecarray(U, N), Δ, N, BC, Params)
 end
 Res_closed! = (F,U) -> Res!(F, U, Δ, N, BC, Params)            # create a function with only 1 input parameter
-
-
-
 
 # Setup
 Nz =    1001
@@ -100,14 +97,12 @@ sparsity    =   jacobian_sparsity(Res_closed!,F, U)
 J           =   Float64.(sparsity)
 colors      =   matrix_colors(J) 
 
-
 function perform_timestepping(Params, U, F, J, colors; tmax=1.0, step_plot=10, Prange=0.03, ϕmax=4, filename= "animation.mp4")
     time = 0.0
     it = 0
     
     fig = Figure(size = (600, 800))
     ax1 = Axis(fig[1, 1], xlabel="melt fraction ϕ", ylabel="Depth Z ", title="time=$time", limits=(0, ϕmax, -10,150))
-
     ax2 = Axis(fig[1, 2], xlabel="effective pressure Pe", limits=(-Prange,Prange, -10,150))  # create a plot
     
     record(fig, filename) do io

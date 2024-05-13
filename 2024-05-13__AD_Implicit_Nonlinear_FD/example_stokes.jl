@@ -34,7 +34,8 @@ function Res!(Fvec::AbstractVector{T}, U::Vector{<:AbstractArray{T}}, Δ::NTuple
     εxx = diff(Vx,dims=1)./dx
     εzz = diff(Vz,dims=2)./dz
     εxz = zeros(eltype(Vx), Nx+1, Nz+1)
-    εxz[2:end-1,2:end-1] = (diff(Vx[2:end-1,:],dims=2)./dz + diff(Vz[:,2:end-1],dims=1)./dx)/2
+    εxz[2:end-1,2:end-1] = (diff(Vx[2:end-1,:],dims=2)./dz + diff(Vz[:,2:end-1],dims=1)./dx)
+
     εxz2_c = (εxz[2:end,2:end].^2 + εxz[1:end-1,2:end].^2 + εxz[1:end-1,1:end-1].^2 + εxz[2:end,1:end-1].^2)/4
     εII_c = sqrt.(0.5*εxx.^2 + 0.5.*εzz.^2 + εxz2_c.^2) # 2nd invariant @ center
 
@@ -51,17 +52,16 @@ function Res!(Fvec::AbstractVector{T}, U::Vector{<:AbstractArray{T}}, Δ::NTuple
     
     # Mass balance
     Fmass = zero(P)
-    Fmass = εxx +  εzz - K.*P
+    Fmass = εxx +  εzz + K.*P 
 
     # x-momentum balance
-    Fforce1 = zero(Vx)
-    Fforce1[2:end-1,:] = diff(-P + τxx, dims=1)./dx + diff(τxz[2:end-1,:], dims=2)./dz
-    
-    Fforce1[1,:]    = Vx[1,:] .- BC.εbg*Params.x[1];
-    Fforce1[end,:]  = Vx[end,:] .- BC.εbg*Params.x[end];
+    Fforce1             = zero(Vx)
+    Fforce1[2:end-1,:]  = diff(-P + τxx, dims=1)./dx + diff(τxz[2:end-1,:], dims=2)./dz
+    Fforce1[1,:]        = Vx[1,:] .- BC.εbg*Params.x[1];
+    Fforce1[end,:]      = Vx[end,:] .- BC.εbg*Params.x[end];
 
     # z-momentum balance
-    Fforce2 = zero(Vz)
+    Fforce2             =   zero(Vz)
     Fforce2[:,2:end-1]  =   diff(τxz[:,2:end-1], dims=1)./dx + diff(-P + τzz, dims=2)./dz - Params.g*(Params.ρ[:,2:end] + Params.ρ[:,1:end-1])/2 
     Fforce2[:,      1]  =   Vz[:,1] .+ BC.εbg*Params.z[1];
     Fforce2[:,    end]  =   Vz[:,end] .+ BC.εbg*Params.z[end];
@@ -76,7 +76,7 @@ end
 Res_closed! = (F,U) -> Res!(F, U, Δ, N, BC, Params)        # create a function with only 1 input parameter
 
 # Setup problem
-Nx, Nz = 21,21
+Nx, Nz = 201,201
 
 N   =   ((Nx+1,Nz), (Nx,Nz+1), (Nx,Nz))
 Vx  =   rand(N[1]...)
@@ -123,22 +123,14 @@ U       = [Vx,Vz,P]
 F       = vecarray_2_vec(U)
 
 
-Res_closed!(F,U)
-
 # Sparsity pattern of jacobian
-sparsity    =   jacobian_sparsity(Res_closed!,F,U)
+@time sparsity    =   jacobian_sparsity(Res_closed!,F,U)
 J           =   Float64.(sparsity)
 colors      =   matrix_colors(J) 
 
 
-Uvec = vecarray_2_vec(U)
-r = zero(F)
-Res_closed!(r,Uvec) 
-forwarddiff_color_jacobian!(J, Res_closed!, Uvec, colorvec = colors)
-du = J\-r
-
 # Solve system of equations:
-Usol = nonlinear_solution(F, U, J, colors, maxit=1);
+@time Usol = nonlinear_solution(F, U, J, colors, maxit=1);
 
 # plot
 fig, ax, hm = heatmap(x,z,Usol[2])
