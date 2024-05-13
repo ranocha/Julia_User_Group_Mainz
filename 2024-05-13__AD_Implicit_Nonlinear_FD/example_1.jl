@@ -13,6 +13,8 @@ using Symbolics
 using GLMakie
 Makie.inline!(true)
 
+include("addons_multiphysics_AD.jl")
+
 """
     R!(F::AbstractVector, u::AbstractVector, dx, N, u0, uEnd)
 

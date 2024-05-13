@@ -8,7 +8,7 @@
 #
 #   τxx = 2 η εxx 
 #   τzz = 2 η εzz 
-#   τxz =   η εxz 
+#   τxz = 2 η εxz 
 #
 #   εxx = ∂Vx/∂x
 #   εzz = ∂Vz/∂z
@@ -76,7 +76,7 @@ end
 Res_closed! = (F,U) -> Res!(F, U, Δ, N, BC, Params)        # create a function with only 1 input parameter
 
 # Setup problem
-Nx, Nz = 201,201
+Nx, Nz = 101,101
 
 N   =   ((Nx+1,Nz), (Nx,Nz+1), (Nx,Nz))
 Vx  =   rand(N[1]...)
