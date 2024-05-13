@@ -8,7 +8,7 @@ import Symbolics: jacobian_sparsity
 
 Allows creating a sparsity pattern for the jacobian of a function `func` with respect to the input `input`, for the case that we have multiple input fields 
 """
-function jacobian_sparsity(func::Function, input::NTuple; kwargs...)
+function Symbolics.jacobian_sparsity(func::Function, input::NTuple; kwargs...)
     
     # Create a vector with variable names for the different fields
     indices = eachindex.(input) # transfer to linear indices
@@ -31,7 +31,7 @@ end
     
 Computes sparsity pattern for the jacobian of a function `func` with respect to the input `input`, for the case that we have multiple input fields 
 """
-function jacobian_sparsity(func::Function, output::AbstractArray{T}, input::Vector{<:AbstractArray{T}}; kwargs...) where {T<:Number}
+function Symbolics.jacobian_sparsity(func::Function, output::AbstractArray{T}, input::Vector{<:AbstractArray{T}}; kwargs...) where {T<:Number}
     
     # Create a vector with variable names for the different fields
     indices = eachindex.(input) # transfer to linear indices
@@ -140,18 +140,18 @@ end
 
 
 """
-    Usol = nonlinear_solution(Fup::Vector, U::Vector{<:AbstractArray}, J, colors, tol=1e-8, itmax=100)
+    Usol = nonlinear_solution(Fup::Vector, U::Vector{<:AbstractArray}, J, colors; tol=1e-8, maxit=100)
 
 Computes a nonlinear solution using a Newton method with line search.
 `U` needs to be a vector of abstract arrays, which contains the initial guess of every field 
 `J` is the sparse jacobian matrix, and `colors` the coloring matrix, usually computed with `matrix_colors(J)`
 """
-function nonlinear_solution(Fup::Vector, U::Vector{<:AbstractArray}, J, colors, tol=1e-8, itmax=100)
+function nonlinear_solution(Fup::Vector, U::Vector{<:AbstractArray}, J, colors; tol=1e-8, maxit=100)
 
     r   = zero(Fup)
     Uvec = vecarray_2_vec(U)
     err = 1e3; it=0;
-    while err>tol && it<itmax
+    while err>tol && it<maxit
         # compute residual
         Res_closed!(r,Uvec) 
 
