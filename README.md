@@ -13,3 +13,4 @@ including a link to
 - 2024-03-07, Hendrik Ranocha, Essential Julia packages and debugging
 - 2024-04-08, Hendrik Ranocha, Basic performance analysis and optimization
 - 2024-05-13, Boris Kaus, Automatic differentiation & solving nonlinear implicit equations
+- 2024-06-10, Evangelos Moulas, Pseudo-transient iterations
