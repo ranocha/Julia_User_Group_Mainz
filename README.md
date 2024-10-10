@@ -16,3 +16,4 @@ including a link to
 - 2024-06-10, Evangelos Moulas, Pseudo-transient iterations
 - 2024-10-31, Hendrik Ranocha, Introduction to automatic/algorithmic differentiation (AD)
 - 2024-11-14, Valentin Churavy, Overview of the Julia AD ecosystem
+- 2024-11-28, Arpit Babbar, Using Julia and VS Code via SSH
