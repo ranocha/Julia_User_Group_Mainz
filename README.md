@@ -16,4 +16,4 @@ including a link to
 - 2024-04-08, Hendrik Ranocha, Basic performance analysis and optimization
 - 2024-03-07, Hendrik Ranocha, Essential Julia packages and debugging
 - 2024-02-05, Thomas Berkemeier
-- 2024-01-08, Hendrik_Ranocha, From high-level code to low-level performance optimizations
+- 2024-01-08, Hendrik Ranocha, From high-level code to low-level performance optimizations
