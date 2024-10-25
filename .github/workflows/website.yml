@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Rename HTML notebooks
         shell: bash
         run: |

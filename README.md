@@ -10,7 +10,7 @@ including a link to
 
 - 2024-11-28, Arpit Babbar, Using Julia and VS Code via SSH
 - 2024-11-14, Valentin Churavy, Overview of the Julia AD ecosystem
-- 2024-10-31, Hendrik Ranocha, Introduction to automatic/algorithmic differentiation (AD)
+- 2024-10-31, Hendrik Ranocha, [Introduction to automatic/algorithmic differentiation (AD)](https://ranocha.de/Julia_User_Group_Mainz/2024_10_31_Introduction_to_AD)
 - 2024-06-10, Evangelos Moulas, Pseudo-transient iterations
 - 2024-05-13, Boris Kaus, Automatic differentiation & solving nonlinear implicit equations
 - 2024-04-08, Hendrik Ranocha, Basic performance analysis and optimization
