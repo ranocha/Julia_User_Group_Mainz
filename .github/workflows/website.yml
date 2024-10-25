@@ -1,0 +1,46 @@
+name: Deploy HTML output
+
+on:
+  push:
+    branches:
+      - [$default-branch]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Cancel redundant CI runs automatically
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prepare_static_html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Rename HTML notebooks
+        shell: bash
+        run: |
+          mkdir -p public
+          cp 2024-10-31__Introduction_to_AD/intro_to_ad.html public/2024_10_31_Introduction_to_AD.html
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
+  deploy_html:
+    runs-on: ubuntu-latest
+    needs: prepare_static_html
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
