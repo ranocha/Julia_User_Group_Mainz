@@ -136,7 +136,27 @@ md"We can think of the function as a kind of *computational graph* obtained by d
 md"To compute the derivative, we have to apply the chain rule multiple times."
 
 # ╔═╡ 1811b4ff-f45a-4144-8f67-abddc79c1f1c
-md"We would like to automate this! To do so, we introduce so-called [dual numbers](https://en.wikipedia.org/wiki/Dual_number). They carry both a `value` and derivative (called `deriv`, the ε part above)."
+md"""
+We would like to automate this! To do so, we introduce so-called [dual numbers](https://en.wikipedia.org/wiki/Dual_number). They carry both a `value` and derivative (called `deriv`, the ε part above). Formally, a dual number can be written as
+
+$$x + \varepsilon y, \qquad x, y \in \mathbb{R},$$
+
+quite similar to a complex number
+
+$$z = x + \mathrm{i} y, \qquad x, y \in \mathbb{R}.$$
+
+However, the new basis element $\varepsilon$ satisfies
+
+$$\varepsilon^2 = 0$$
+
+instead of $\mathrm{i}^2 = -1$. Thus, the dual number have the algebraic structure of an *algebra* instead of a field like the complex numbers $\mathbb{C}$.
+
+In our applications, the $\varepsilon$ part contains the derivative. Indeed, the rule $\varepsilon^2 = 0$ yields
+
+$$(a + \varepsilon b) (c + \varepsilon d) = a c + \varepsilon (a d + b c),$$
+
+which is just the product rule of calculus. You can code this as follows.
+"""
 
 # ╔═╡ a8e22d08-c2c8-4ee4-87fe-7b665edc4a3e
 begin
@@ -642,6 +662,7 @@ There is a lot of material online about AD (in Julia), e.g.,
 - [ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl)
 - [Lecture notes "Advanced Topics from Scientific Computing" by Jürgen Fuhrmann](https://www.wias-berlin.de/people/fuhrmann/AdSciComp-WS2324/)
 - [https://dj4earth.github.io/MPE24](https://dj4earth.github.io/MPE24/)
+- [A JuliaLabs workshop](https://github.com/JuliaLabs/Workshop-OIST/blob/master/Lecture%203b%20--%20AD%20in%2010%20minutes.ipynb)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
