@@ -66,7 +66,7 @@ end
 
 # ╔═╡ dd43e033-091b-4390-ae16-0764ce392c4c
 md"""
-## Babylonian sqrt
+## Babylonian sqrt (Heron's method)
 
 I would like to use a simple example, computation of `sqrt(x)`, where for me how autodiff works came as both a mathematical surprise, and a computing wonder. The example is the Babylonian algorithm, known to man for millenia, to compute `sqrt(x)`:
 
