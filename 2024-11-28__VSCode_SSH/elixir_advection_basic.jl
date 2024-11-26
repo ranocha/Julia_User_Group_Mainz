@@ -28,7 +28,7 @@ semi = SemidiscretizationHyperbolic(mesh, equations, initial_condition_convergen
 # ODE solvers, callbacks etc.
 
 # Create ODE problem with time span from 0.0 to 1.0
-ode = semidiscretize(semi, (0.0, 4.0))
+ode = semidiscretize(semi, (0.0, 4.5))
 
 # At the beginning of the main loop, the SummaryCallback prints a summary of the simulation setup
 # and resets the timers
@@ -50,7 +50,6 @@ visualization = VisualizationCallback(interval = 5)
 callbacks = CallbackSet(summary_callback, analysis_callback, save_solution,
                         stepsize_callback, visualization)
 
-###############################################################################
 # run the simulation
 
 # OrdinaryDiffEq's `solve` method evolves the solution in time and executes the passed callbacks
@@ -62,10 +61,21 @@ sol = solve(ode, CarpenterKennedy2N54(williamson_condition = false),
 # Print the timer summary
 summary_callback()
 
+
+#------------------------------------------------------------------------------
+# Plot final solution
 plotlyjs()
 plot(sol)
 
-savefig("advection_basic.html")
 
+#------------------------------------------------------------------------------
+# Save figure with interactivity
+# Particularly useful for very large figures
+savefig("advection_basic.html")
+savefig("advection_basic.pdf")
+savefig("advection_basic.png")
+
+
+#------------------------------------------------------------------------------
 pd = PlotData1D(sol, slice=:y, point=(1.0, 0.0))
 scatter(pd)
