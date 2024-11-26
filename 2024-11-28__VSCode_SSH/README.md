@@ -6,9 +6,9 @@ This is a tutorial on setting up usage of `julia` on a remote server using SSH v
 
 VS Code can be installed from the following link https://code.visualstudio.com/. Once you have installed VS Code, you need to install the [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) extension by searching for its name in the extension marketplace. Within VS code, you can use the hotkey `ctrl` + `shift` + `x` for Linux/Windows or `cmd` + `shift` + `x` for `macos`. You can also follow this [guide for VS Code extensions](https://code.visualstudio.com/docs/editor/extension-marketplace) if you prefer to use GUI.
 
-## Installing `julia` (to be done on server)
+## Installing `julia` (to be done on server, NOT needed for apollo)
 
-We need to install `julia` on the remote server. The installation is simple by using [juliaup](https://github.com/JuliaLang/juliaup) which is now the [officially recommended way](https://julialang.org/downloads/). You may need to close and reopen the shell. The installation is successful if you can start `julia` by entering `julia` in the shell.
+We need to install `julia` on the remote server. The installation is simple by using [juliaup](https://github.com/JuliaLang/juliaup) which is now the [officially recommended way](https://julialang.org/downloads/). You may need to close and reopen the shell. The installation is successful if you can start `julia` by entering `julia` in the shell. This is not needed for apollo because it has a common `julia` installed for all users.
 
 ## Connecting to remote server using SSH on VS code
 
@@ -24,28 +24,27 @@ Now we will open the directory in VS code by pressing `ctrl`/`cmd` (depending on
 ```
 /local/home/julia24/unique_name/Julia_User_Group_Mainz/2024-11-28__VSCode_SSH
 ```
-If you are using some other username, replace `julia24` with that username and its location before it.
-
-## Executing code in this notebook (without VS Code)
-
-To simply run this code, you can open the current directory in shell and enter `julia` in the current project environment as `julia --project=.`. You always need to be in the current project environment to run these codes. You can install the required dependencies with the following commands. Note that it may take some time, but it is only needed once.
+If you are using some other username, replace `julia24` with that username and its location before it. Now we use `julia` through the VS code extension by again using the command palatte (`ctrl`/`cmd` + `shift` + `p`) and entering `Julia: Start REPL`. You should always make sure that you are in the current 'environment` by entering
 ```julia
 julia> import Pkg
-julia> Pkg.instantiate()
+julia> Pkg.activate(".")
 ```
-You can now run either of the examples as
+We now install the required dependencies for the packages by the following command. It takes some time, but is only needed once
 ```julia
-julia> include("elixir_advection_basic.jl")
+julia> # Pkg.instantiate() (Skipped for the tutorial. Don't run this!)
 ```
-or
+For the tutorial, we skip this command and instead use the following command to activate an environment where I have already installed the packaged
 ```julia
-julia> include("run_blast.jl")
+julia> Pkg.activate("/local/home/julia24/arpit/2024-11-28__VSCode_SSH")
 ```
+We can now run the codes in this directory. You can open the codes "my_run.jl", "elixir_advection_basic.jl", "run_blast.jl" by using file explorer. You can access the file explorer with the hotkey `ctrl`/`cmd` + `shift` + `e` or by choosing the top icon in the left side bar. Once you open these files in VS code, you can run them by pressing the play button at top right of the window, or by using the hotkeys below
 
 ## Useful VS Code hotkeys
 
-1. `ctrl`/`cmd` + `p` hotkey = Navigate through open folders
-2. `ctrl`/`cmd` + `` ` `` = Change focus to shell
-3. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
-4. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
-5. `shift` + `p` = Run `julia` code line and move to the next
+1. `shift` + `enter` = Run `julia` code line and move to the next
+2. `ctrl` + `enter` = Run `julia` code without moving to the next line
+3. `alt` + `shift` + `enter` = Run block of julia code and move cursor to the next block
+4. `ctrl`/`cmd` + `p` hotkey = Navigate through open folders
+5. `ctrl`/`cmd` + `` ` `` = Change focus to shell
+6. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
+7. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
