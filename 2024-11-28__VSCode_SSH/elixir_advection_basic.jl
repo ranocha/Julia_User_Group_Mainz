@@ -65,5 +65,7 @@ summary_callback()
 plotlyjs()
 plot(sol)
 
+savefig("advection_basic.html")
 
-
+pd = PlotData1D(sol, slice=:y, point=(1.0, 0.0))
+scatter(pd)
