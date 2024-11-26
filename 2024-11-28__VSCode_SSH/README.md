@@ -56,7 +56,8 @@ Run the following in `julia` on the server `apollo`.
 julia> using Pluto
 julia> Pluto.run(port=1235)
 ```
-Now, you can access the pluto notebook session that we started on `apollo` by running the following on your terminal
+This command will show you a link like `http://localhost:1235/?secret=....`. Keep that link and do not close this julia session. Open another terminal tab on your local computer. You can access the pluto notebook session that we started on `apollo` by running the following on your terminal
 ```shell
 ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
 ```
+Now, you can access the link that you saved earlier.
