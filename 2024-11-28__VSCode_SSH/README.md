@@ -48,3 +48,15 @@ We can now run the codes in this directory. You can open the codes "my_run.jl", 
 5. `ctrl`/`cmd` + `` ` `` = Change focus to shell
 6. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
 7. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
+
+## Running Pluto over SSH
+
+Run the following in `julia` on the server `apollo`.
+```julia
+julia> using Pluto
+julia> Pluto.run(port=1235)
+```
+Now, you can access the pluto notebook session that we started on `apollo` by running the following on your terminal
+```shell
+ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
+```
