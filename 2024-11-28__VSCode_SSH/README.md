@@ -51,7 +51,7 @@ We can now run the codes in this directory. You can open the codes "my_run.jl", 
 
 ## Running Pluto over SSH
 
-Run the following in `julia` on the server `apollo`.
+Run the following in `julia` on the server `apollo`. Replace the port number with a unique port during the live tutorial.
 ```julia
 julia> using Pluto
 julia> Pluto.run(port=1235)
@@ -61,3 +61,7 @@ This command will show you a link like `http://localhost:1235/?secret=....`. Kee
 ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
 ```
 Now, you can access the link that you saved earlier.
+
+## Running Persistent (resumable) VS code session (Experimental feature)
+
+The documentation explains it [here](https://www.julia-vscode.org/docs/stable/userguide/remote/#Persistent-server-sessions). However, the feature is experimental. Further, you can currently only have one persistent session which is pretty limiting.
