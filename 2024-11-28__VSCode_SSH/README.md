@@ -31,13 +31,28 @@ julia> Pkg.activate(".")
 ```
 We now install the required dependencies for the packages by the following command. It takes some time, but is only needed once
 ```julia
-julia> # Pkg.instantiate() (Skipped for the tutorial. Don't run this!)
+julia> Pkg.instantiate()
 ```
-For the tutorial, we skip this command and instead use the following command to activate an environment where I have already installed the packaged
-```julia
-julia> Pkg.activate("/local/home/julia24/arpit/2024-11-28__VSCode_SSH")
-```
+
 We can now run the codes in this directory. You can open the codes "my_run.jl", "elixir_advection_basic.jl", "run_blast.jl" by using file explorer. You can access the file explorer with the hotkey `ctrl`/`cmd` + `shift` + `e` or by choosing the top icon in the left side bar. Once you open these files in VS code, you can run them by pressing the play button at top right of the window, or by using the hotkeys below
+
+## Running Pluto over SSH
+
+Run the following in `julia` on the server `apollo`. Replace the port number with a unique port during the live tutorial.
+```julia
+julia> using Pluto
+julia> Pluto.run(port=1235)
+```
+This command will show you a link like `http://localhost:1235/?secret=....`. Keep that link and do not close this julia session. Open another terminal tab on your local computer. You can access the pluto notebook session that we started on `apollo` by running the following on your terminal
+```shell
+ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
+```
+Now, you can access the link that you saved earlier.
+
+## Other VS Code extensions useful in this tutorial
+
+1. HTML Preview. Used to preview HTML files. https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
+2. vscode-pdf. Used to display PDF files in VS Code. https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf
 
 ## Useful VS Code hotkeys
 
@@ -49,15 +64,6 @@ We can now run the codes in this directory. You can open the codes "my_run.jl", 
 6. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
 7. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
 
-## Running Pluto over SSH
+## Running Persistent (resumable) VS code session (Experimental feature)
 
-Run the following in `julia` on the server `apollo`.
-```julia
-julia> using Pluto
-julia> Pluto.run(port=1235)
-```
-This command will show you a link like `http://localhost:1235/?secret=....`. Keep that link and do not close this julia session. Open another terminal tab on your local computer. You can access the pluto notebook session that we started on `apollo` by running the following on your terminal
-```shell
-ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
-```
-Now, you can access the link that you saved earlier.
+The documentation explains it [here](https://www.julia-vscode.org/docs/stable/userguide/remote/#Persistent-server-sessions). However, the feature is experimental. Further, you can currently only have one persistent session which is pretty limiting.
