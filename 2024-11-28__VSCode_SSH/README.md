@@ -39,16 +39,6 @@ julia> Pkg.activate("/local/home/julia24/arpit/2024-11-28__VSCode_SSH")
 ```
 We can now run the codes in this directory. You can open the codes "my_run.jl", "elixir_advection_basic.jl", "run_blast.jl" by using file explorer. You can access the file explorer with the hotkey `ctrl`/`cmd` + `shift` + `e` or by choosing the top icon in the left side bar. Once you open these files in VS code, you can run them by pressing the play button at top right of the window, or by using the hotkeys below
 
-## Useful VS Code hotkeys
-
-1. `shift` + `enter` = Run `julia` code line and move to the next
-2. `ctrl` + `enter` = Run `julia` code without moving to the next line
-3. `alt` + `shift` + `enter` = Run block of julia code and move cursor to the next block
-4. `ctrl`/`cmd` + `p` hotkey = Navigate through open folders
-5. `ctrl`/`cmd` + `` ` `` = Change focus to shell
-6. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
-7. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
-
 ## Running Pluto over SSH
 
 Run the following in `julia` on the server `apollo`. Replace the port number with a unique port during the live tutorial.
@@ -61,6 +51,21 @@ This command will show you a link like `http://localhost:1235/?secret=....`. Kee
 ssh -L 1235:localhost:1235 julia24@apollo.geo.uni-mainz.de
 ```
 Now, you can access the link that you saved earlier.
+
+## Other VS Code extensions useful in this tutorial
+
+1. HTML Preview. Used to preview HTML files. https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
+2. vscode-pdf. Used to display PDF files in VS Code. https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf
+
+## Useful VS Code hotkeys
+
+1. `shift` + `enter` = Run `julia` code line and move to the next
+2. `ctrl` + `enter` = Run `julia` code without moving to the next line
+3. `alt` + `shift` + `enter` = Run block of julia code and move cursor to the next block
+4. `ctrl`/`cmd` + `p` hotkey = Navigate through open folders
+5. `ctrl`/`cmd` + `` ` `` = Change focus to shell
+6. `ctrl`/`cmd` + 1/2/3 = change focus to active window number 1/2/3
+7. `ctrl`/`cmd` + `shift` + `f` = global search in the active folder
 
 ## Running Persistent (resumable) VS code session (Experimental feature)
 
