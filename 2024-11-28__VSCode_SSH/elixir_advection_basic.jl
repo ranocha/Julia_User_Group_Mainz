@@ -1,7 +1,6 @@
 using OrdinaryDiffEq
 using Trixi
 using Plots
-gr()
 
 ###############################################################################
 # semidiscretization of the linear advection equation
