@@ -81,7 +81,9 @@ The staggered grid:
             + - - - + - - - + - - - + - - - + - - - + - - - +
 
 The temperature, $T$, is saved at "•", therefore the size is (nx, nz)
+
 The horizontal fluxes, $qx$, are saved at "→", therefore the size is (nx-1, nz).
+
 The vertical fluxes, $qz$, are saved at "↑", therefore the size is (nx, nz-1).
 
 ## How do we solve the forward problem using ```ForwardDiff.jl```?
