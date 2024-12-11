@@ -20,7 +20,7 @@ In this lunch-seminar we will be taking a look at how to calculate adjoint sensi
 
 2D diffusion with dirichlet boundary conditions and a source term
 
-![2D_diffusion](figures/2D_diffusion_10.png)
+![2D_diffusion](figures/2D_Diffusion_10.png)
 
 ## Strategy to Solve Forward Problem
 
