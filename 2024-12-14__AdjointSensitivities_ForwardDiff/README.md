@@ -62,7 +62,7 @@ q_i = D_i {T_{i+{1 \over 2}} ^{n+1} - T_{i-{1 \over 2}} ^{n+1} \over dx}
 R_i = C_{i} ^{n+1} - C_{i} ^{n} - {\Delta t \over \Delta x ^2}(D_{i+{1 \over 2}}q_{i+{1 \over 2}} - D_{i-{1 \over 2}}q_{i-{1 \over 2}} - S)
 ```
 
-where n denotes the temporal coordinates and i the spatial coordinates. Note that we deploy a staggered grid, where the temperatures lie in the cell centers and the fluxes on the cell vertices. The 2D case looks as follows:
+where $n$ denotes the temporal coordinates and $i$ the spatial coordinates. Note that we deploy a staggered grid, where the temperatures lie in the cell centers and the fluxes on the cell vertices. The 2D case looks as follows:
 
 The staggered grid: 
 
