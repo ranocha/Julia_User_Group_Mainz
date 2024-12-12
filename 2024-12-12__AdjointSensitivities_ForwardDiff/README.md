@@ -1,4 +1,4 @@
-# Julia-User-Group Lunch Seminar 14.12.24
+# Julia-User-Group Lunch Seminar 12.12.24
 
 In this lunch-seminar we will be taking a look at how to calculate adjoint sensitivities of physical simulations using ```ForwardDiff.jl```. The main focus will lie on the functionality of the code rather than the derivation of the exact expressions we will use. Additionally, we will take a look at how we can use ```ForwardDiff.jl``` to write flexible codes to simulate partial differential equations. For a detailed introduction on how ```ForwardDiff.jl``` calculates derivatives see the seminars on 31.10. and 14.11.
 
