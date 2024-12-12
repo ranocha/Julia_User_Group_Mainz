@@ -20,7 +20,7 @@ In this lunch-seminar we will be taking a look at how to calculate adjoint sensi
 
 2D diffusion with dirichlet boundary conditions and a source term
 
-![2D_diffusion](figures/2D_diffusion_10.png)
+![2D_diffusion](figures/2D_Diffusion_10.png)
 
 ## Strategy to Solve Forward Problem
 
@@ -62,7 +62,7 @@ q_i = D_i {T_{i+{1 \over 2}} ^{n+1} - T_{i-{1 \over 2}} ^{n+1} \over dx}
 R_i = C_{i} ^{n+1} - C_{i} ^{n} - {\Delta t \over \Delta x ^2}(D_{i+{1 \over 2}}q_{i+{1 \over 2}} - D_{i-{1 \over 2}}q_{i-{1 \over 2}} - S)
 ```
 
-where n denotes the temporal coordinates and i the spatial coordinates. Note that we deploy a staggered grid, where the temperatures lie in the cell centers and the fluxes on the cell vertices. The 2D case looks as follows:
+where $n$ denotes the temporal coordinates and $i$ the spatial coordinates. Note that we deploy a staggered grid, where the temperatures lie in the cell centers and the fluxes on the cell vertices. The 2D case looks as follows:
 
 The staggered grid: 
 
@@ -81,7 +81,9 @@ The staggered grid:
             + - - - + - - - + - - - + - - - + - - - + - - - +
 
 The temperature, $T$, is saved at "•", therefore the size is (nx, nz)
+
 The horizontal fluxes, $qx$, are saved at "→", therefore the size is (nx-1, nz).
+
 The vertical fluxes, $qz$, are saved at "↑", therefore the size is (nx, nz-1).
 
 ## How do we solve the forward problem using ```ForwardDiff.jl```?
