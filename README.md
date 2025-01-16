@@ -8,7 +8,7 @@ including a link to
 
 ## List of talks
 
-- 2025-01-23, TBD
+- 2025-01-23, Arpit Babbar and Marco Artiano, An introduction to Trixi.jl
   - Please note that we have to meet in a different room: **04-220 in Staudingerweg 9**
 - 2025-01-09, Pascal Aellig, Leveraging the Julia infrastructure on GitHub for package development
 - 2024-12-12, Jacob Frasunkiewicz, Using AD to compute adjoints
