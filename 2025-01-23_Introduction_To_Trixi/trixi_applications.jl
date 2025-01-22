@@ -930,7 +930,16 @@ md"""# Numerical simulation of acoustic waves"""
 
 # ╔═╡ d9a317fb-6ff2-4774-b6f9-fa41d7867202
  html"""<video width="720" height="480" controls>
-  <source src="https://github.com/trixi-framework/talk-2025-Julia_and_Trixi_in_Frankfurt/raw/refs/heads/main/atmospheric_applications/animation_bubble_amr.mp4">
+  <source src="https://github.com/Arpit-Babbar/Julia_User_Group_Mainz/raw/refs/heads/trixi/2025-01-23_Introduction_To_Trixi/videos/animation_trixi.mp4">
+Your browser does not support the video tag.
+</video>"""
+
+# ╔═╡ faf0a607-50bc-4268-ab30-d3563e41bff8
+md"""# Numerical simulation of acoustic waves"""
+
+# ╔═╡ 404cc7d7-838c-4073-a4a5-4cbfc049cc6d
+ html"""<video width="720" height="480" controls>
+  <source src="https://github.com/Arpit-Babbar/Julia_User_Group_Mainz/raw/refs/heads/trixi/2025-01-23_Introduction_To_Trixi/videos/animation_trixi_grid.mp4">
 Your browser does not support the video tag.
 </video>"""
 
@@ -3859,6 +3868,8 @@ version = "1.4.1+2"
 # ╟─ae85c47d-0506-43b9-b846-51f1118c2c4c
 # ╟─161882d0-cf76-4756-9fc1-e39a0e14dd68
 # ╟─ea6fdad5-8773-467c-b1ba-b69c77c62d37
-# ╠═d9a317fb-6ff2-4774-b6f9-fa41d7867202
+# ╟─d9a317fb-6ff2-4774-b6f9-fa41d7867202
+# ╟─faf0a607-50bc-4268-ab30-d3563e41bff8
+# ╟─404cc7d7-838c-4073-a4a5-4cbfc049cc6d
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
