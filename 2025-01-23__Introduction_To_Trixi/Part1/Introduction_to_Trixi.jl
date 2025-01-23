@@ -10,6 +10,9 @@ using Trixi
 # ╔═╡ a613f1bc-fb02-4e1b-b7bb-84db13b32013
 using Trixi: AbstractEquations
 
+# ╔═╡ 80969318-9c0b-4d0e-9371-ff79ad3ad6fa
+using Accessors: @set
+
 # ╔═╡ 1a49968b-3b5d-4eb0-b568-122c758a49cd
 begin
 	using PlutoUI
@@ -946,9 +949,13 @@ begin
 	end
 end
 
+# ╔═╡ a9088115-b07f-4ed4-8180-9293df6580ec
+html"""
+<h1> <center> Rerun with new indicator </center> </h1>
+"""
+
 # ╔═╡ f0603814-0582-4eac-81fe-754ace2226b6
-begin
-	using Accessors
+begin	
 	indicator_ = @set indicator_sc.variable = density_pressure
 	
 	volume_integral_ = VolumeIntegralShockCapturingHG(indicator_;
@@ -957,11 +964,6 @@ begin
 	semi_ = SemidiscretizationHyperbolic(mesh_1d, equations_reactive, initial_condition_weak_blast_wave, solver_)
 	ode_ = semidiscretize(semi_, tspan)
 end;
-
-# ╔═╡ a9088115-b07f-4ed4-8180-9293df6580ec
-html"""
-<h1> <center> Rerun with new indicator </center> </h1>
-"""
 
 # ╔═╡ 52d4e074-ce54-4f9c-9815-a64c96104948
 sol_ = solve(ode_, 
@@ -3616,6 +3618,7 @@ version = "1.4.1+2"
 # ╟─34ca75b2-b110-4d37-bb1f-27e3be4d70d6
 # ╠═96ed1ce5-29d7-4cfe-9c02-05d20feb951e
 # ╟─a9088115-b07f-4ed4-8180-9293df6580ec
+# ╠═80969318-9c0b-4d0e-9371-ff79ad3ad6fa
 # ╠═f0603814-0582-4eac-81fe-754ace2226b6
 # ╠═52d4e074-ce54-4f9c-9815-a64c96104948
 # ╠═42569f66-285c-4436-929a-4344fa299f09
