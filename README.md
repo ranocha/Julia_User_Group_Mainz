@@ -10,6 +10,8 @@ including a link to
 
 - 2025-01-23, Arpit Babbar and Marco Artiano, An introduction to Trixi.jl
   - Please note that we have to meet in a different room: **04-220 in Staudingerweg 9**
+  - [Introduction to Trixi.jl](https://ranocha.de/Julia_User_Group_Mainz/2025_01_23_Introduction_To_Trixi_Part1.html)
+  - [Some Applications of Trixi.jl](https://ranocha.de/Julia_User_Group_Mainz/2025_01_23_trixi_applications.html)
 - 2025-01-09, Pascal Aellig, Leveraging the Julia infrastructure on GitHub for package development
 - 2024-12-12, Jacob Frasunkiewicz, Using AD to compute adjoints
 - 2024-11-28, Arpit Babbar, Using Julia and VS Code via SSH
