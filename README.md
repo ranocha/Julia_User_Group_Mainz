@@ -8,7 +8,8 @@ including a link to
 
 ## List of talks
 
-- 2025-01-23, Arpit Babbar and Marco Artiano, An introduction to Trixi.jl
+- 2025-02-06, Marco Artiano, [HOHQMesh.jl](https://github.com/trixi-framework/HOHQMesh.jl) tutorial
+- 2025-01-23, Arpit Babbar and Marco Artiano, An introduction to [Trixi.jl](https://github.com/trixi-framework/Trixi.jl)
   - Please note that we have to meet in a different room: **04-220 in Staudingerweg 9**
   - [Introduction to Trixi.jl](https://ranocha.de/Julia_User_Group_Mainz/2025_01_23_Introduction_To_Trixi_Part1.html)
   - [Some Applications of Trixi.jl](https://ranocha.de/Julia_User_Group_Mainz/2025_01_23_trixi_applications.html)
