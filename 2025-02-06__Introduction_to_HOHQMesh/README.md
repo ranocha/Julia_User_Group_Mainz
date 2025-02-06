@@ -38,3 +38,11 @@ In addition to the notebook, the repository also includes the example explored i
 ```bash
 julia --project=. --threads=8
 ```
+
+The mesh file for the Von Karman Vortex Sheets test case has to be generated first.
+
+```julia
+include("cylinder_mesh.jl")
+```
+
+The mesh will be then generated in the directory 'out' and will be automatically loaded in the `von_karman.jl` test case.
