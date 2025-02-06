@@ -33,7 +33,7 @@ in the Julia REPL. Then, open the Pluto notebook `intro_hohqmesh.jl`.
 
 ## Run the examples
 
-In addition to the notebook, the repository also includes the example explored in the Pluto notebook. It is recommended to run the `von_karman.jl` test case with multiple threads, starting the julia via the following command:
+In addition to the notebook, the repository also includes the example showed in the Pluto notebook. It is recommended to run the `von_karman.jl` test case with multiple threads, starting julia via the following command:
 
 ```bash
 julia --project=. --threads=8
