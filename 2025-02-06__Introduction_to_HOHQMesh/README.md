@@ -45,4 +45,4 @@ The mesh file for the Von Karman Vortex Sheets test case has to be generated fir
 include("cylinder_mesh.jl")
 ```
 
-The mesh will be then generated in the directory 'out' and will be automatically loaded in the `von_karman.jl` test case.
+The mesh will be then generated in the folder `out` and will be automatically loaded in the `von_karman.jl` test case.
