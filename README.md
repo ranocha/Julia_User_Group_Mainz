@@ -8,6 +8,7 @@ including a link to
 
 ## List of talks
 
+- 2025-03-06, Boris Kaus, Creating GUIs using [GLMakie.jl](https://github.com/MakieOrg/Makie.jl)
 - 2025-02-06, Marco Artiano, [HOHQMesh.jl](https://github.com/trixi-framework/HOHQMesh.jl) tutorial
   - Please note that we have to meet in a different room: **Gernot Gräf Raum, fifth floor in Staudingerweg 7**
 - 2025-01-23, Arpit Babbar and Marco Artiano, An introduction to [Trixi.jl](https://github.com/trixi-framework/Trixi.jl)
