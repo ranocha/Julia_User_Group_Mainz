@@ -1,0 +1,75 @@
+\begin{MODEL}
+   \begin{OUTER_BOUNDARY}
+      \begin{CIRCULAR_ARC}
+         units = degrees
+         name = inflow
+         radius = 5.0
+         start angle = 90.0
+         center = [0.0,0.0,0.0]
+         end angle = 180.0
+      \end{CIRCULAR_ARC}
+      \begin{END_POINTS_LINE}
+         name = :symmetry
+         xEnd = [0.0,0.0,0.0]
+         xStart = [-5.0,0.0,0.0]
+      \end{END_POINTS_LINE}
+      \begin{CIRCULAR_ARC}
+         units = degrees
+         name = cylinder
+         radius = 0.5
+         start angle = 180.0
+         center = [0.5,0.0,0.0]
+         end angle = 0.0
+      \end{CIRCULAR_ARC}
+      \begin{END_POINTS_LINE}
+         name = :symmetry
+         xEnd = [20.0,0.0,0.0]
+         xStart = [1.0,0.0,0.0]
+      \end{END_POINTS_LINE}
+      \begin{END_POINTS_LINE}
+         name = outflow
+         xEnd = [20.0,5.0,0.0]
+         xStart = [20.0,0.0,0.0]
+      \end{END_POINTS_LINE}
+      \begin{END_POINTS_LINE}
+         name = top
+         xEnd = [0.0,5.0,0.0]
+         xStart = [20.0,5.0,0.0]
+      \end{END_POINTS_LINE}
+   \end{OUTER_BOUNDARY}
+\end{MODEL}
+\begin{CONTROL_INPUT}
+   \begin{REFINEMENT_REGIONS}
+      \begin{REFINEMENT_LINE}
+         name = region
+         x1 = [20.0,0.0,0.0]
+         w = 1.0
+         x0 = [1.0,0.0,0.0]
+         type = smooth
+         h = 0.2
+      \end{REFINEMENT_LINE}
+      \begin{REFINEMENT_CENTER}
+         name = region
+         w = 1.0
+         x0 = [0.5,0.0,0.0]
+         type = smooth
+         h = 0.2
+      \end{REFINEMENT_CENTER}
+   \end{REFINEMENT_REGIONS}
+   \begin{SPRING_SMOOTHER}
+      smoothing type = LinearAndCrossbarSpring
+      smoothing = ON
+   \end{SPRING_SMOOTHER}
+   \begin{BACKGROUND_GRID}
+      background grid size = [2.0,2.0,0.0]
+   \end{BACKGROUND_GRID}
+   \begin{RUN_PARAMETERS}
+      mesh file name = out/sample.inp
+      plot file format = skeleton
+      plot file name = out/sample.tec
+      stats file name = out/sample.txt
+      mesh file format = ABAQUS
+      polynomial order = 3
+   \end{RUN_PARAMETERS}
+\end{CONTROL_INPUT}
+\end{FILE}

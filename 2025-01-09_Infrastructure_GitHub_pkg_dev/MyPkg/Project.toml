@@ -1,0 +1,12 @@
+name = "MyPkg"
+uuid = "43e0a56e-8346-48d3-8bb2-a8bb4e71b673"
+authors = ["Your Name <your.email@example.com>"]
+version = "0.1.0"
+
+[deps]
+DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
+OhMyREPL = "5fb14364-9ced-5910-84b2-373655c76a03"
+
+[compat]
+DocumenterTools = "0.1.20"
+OhMyREPL = "0.5.28"
