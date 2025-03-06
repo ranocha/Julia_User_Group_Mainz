@@ -58,6 +58,3 @@ on(y) do yval
     println("y changed")
 end
 display(fig)
-
-
-# 
