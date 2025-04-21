@@ -32,6 +32,7 @@ jobs:
           cp 2024-10-31__Introduction_to_AD/intro_to_ad.html public/2024_10_31_Introduction_to_AD.html
           cp 2025-01-23__Introduction_To_Trixi/Part1/Introduction_to_Trixi.html public/2025_01_23_Introduction_To_Trixi_Part1.html
           cp 2025-01-23__Introduction_To_Trixi/Part2/trixi_applications.html public/2025_01_23_trixi_applications.html
+          cp 2025-04-24__Comments_on_plotting/plotting.html public/2025_04_24_Comments_on_plotting.html
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
