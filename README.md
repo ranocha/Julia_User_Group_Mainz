@@ -8,7 +8,7 @@ including a link to
 
 ## List of talks
 
-- 2025-07-03, Hugo Dominguez, Unvertainty Propagation using Measurements.jl and MonteCarloMeasurements.jl
+- 2025-07-03, Hugo Dominguez, Uncertainty Propagation using Measurements.jl and MonteCarloMeasurements.jl
 - 2025-06-05, Boris Kaus, tbd
 - 2025-05-22: Antrittsvorlesung of Thibault Duretz in Frankfurt
 - 2025-05-08, Collin Wittenstein and Hendrik Ranocha, Some Julia Workflows
