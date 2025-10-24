@@ -8,6 +8,7 @@ including a link to
 
 ## List of talks
 
+- 2025-11-27: Geoscience hackathon - no meeting?
 - 2025-11-13, Hendrik Ranocha, Tools for programming and related tasks
 - 2025-07-03, Hugo Dominguez, Uncertainty Propagation using Measurements.jl and MonteCarloMeasurements.jl
 - 2025-06-05, ~Boris Kaus, tbd~ Discussion and bring your bugs
