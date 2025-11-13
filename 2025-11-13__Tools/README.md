@@ -89,6 +89,11 @@ GitHub made it accessible for students/teachers via its education program
 It can not only complete code, but also LaTeX documents, e.g.,
 lecture notes.
 
+You can also use GitHub Copilot to review code or help you
+understand what's going on. For example, you can mark code,
+click on the yellow icon (star and bulb) in the top left
+corner, and select "Review" or "Explain" (if present).
+
 
 ### Coding Agents
 
