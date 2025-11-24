@@ -8,6 +8,7 @@ including a link to
 
 ## List of talks
 
+- 2025-12-11, Boris Kaus, Wrapping [PETSc](https://petsc.org/) in Julia: [PETSc.jl](https://github.com/JuliaParallel/PETSc.jl)
 - 2025-11-27: Geoscience hackathon - no meeting
 - 2025-11-13, Hendrik Ranocha, Tools for programming and related tasks
 - 2025-07-03, Hugo Dominguez, Uncertainty Propagation using Measurements.jl and MonteCarloMeasurements.jl
