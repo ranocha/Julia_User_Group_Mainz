@@ -8,6 +8,8 @@ including a link to
 
 ## List of talks
 
+- 2026-01-22, Valentin Churavy, GC in Julia
+- 2026-01-08, Annalena Stroh, [Numerical modelling of diffusion-limited mineral growth for geospeedometry applications](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2511/egusphere-2025-2511.pdf)
 - 2025-12-11, Boris Kaus, Wrapping [PETSc](https://petsc.org/) in Julia: [PETSc.jl](https://github.com/JuliaParallel/PETSc.jl)
 - 2025-11-27: Geoscience hackathon - no meeting
 - 2025-11-13, Hendrik Ranocha, Tools for programming and related tasks
