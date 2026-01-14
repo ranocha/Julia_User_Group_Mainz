@@ -8,6 +8,7 @@ including a link to
 
 ## List of talks
 
+- 2026-02-05, TBD
 - 2026-01-22, Boris Kaus, Wrapping [PETSc](https://petsc.org/) in Julia: [PETSc.jl](https://github.com/JuliaParallel/PETSc.jl)
 - 2026-01-08, ~Annalena Stroh, [Numerical modelling of diffusion-limited mineral growth for geospeedometry applications](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2511/egusphere-2025-2511.pdf)~ No meeting
 - 2025-12-11, Valentin Churavy, Automated memory management with Garbage Collection in Julia
