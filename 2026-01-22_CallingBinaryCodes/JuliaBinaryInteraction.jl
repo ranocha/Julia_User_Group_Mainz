@@ -24,7 +24,13 @@ Julia User Group Meeting, 22.01.2026, *Boris Kaus*
 md"""
 # Outline
 
-1. Call executables 
+1. Call executables from julia
+2. Call dynamic libraries from julia
+3. Autogenerate wrappers using `Clang.jl`
+4. Using `BinaryBuilder.jl` to cross-compile binaries & libraries
+5. Distribute libraries (Yggdrasil)
+6. Examples of this
+7. Creating executables and ;ibraries from julia code & call that from C
 """
 
 # ╔═╡ 3efc336a-79a4-47f6-848b-8f888ecda31b
@@ -887,12 +893,12 @@ Result: 900
 
 # ╔═╡ b15c961f-fc62-4a38-ad58-fc29f2947491
 md"""
-# Summary: you have now seen how to link julia and C codes!
+# Summary: Linking julia and C/fortran is quite easy.
 """
 
 # ╔═╡ Cell order:
 # ╟─70c1181a-f626-11f0-2e8b-0ba2fee3fd75
-# ╠═7c8322d0-afdd-4571-bf69-b7fddd7dfd02
+# ╟─7c8322d0-afdd-4571-bf69-b7fddd7dfd02
 # ╟─3efc336a-79a4-47f6-848b-8f888ecda31b
 # ╟─1cbc54bd-5af5-4061-b9b2-a1b0b695d5a9
 # ╟─b383dcf3-4c00-461c-a6b7-65bc265e5d28
@@ -955,6 +961,6 @@ md"""
 # ╟─d2ab2cd1-f659-47f0-87c9-f6ae2fd89912
 # ╟─6725aa97-c688-4ed9-8f4d-38b3aa493019
 # ╟─1d276df9-2c0f-4c91-b191-05d9d616e368
-# ╠═ebcd2e41-5bbd-4f23-a84c-7f01fd1c8170
+# ╟─ebcd2e41-5bbd-4f23-a84c-7f01fd1c8170
 # ╟─159f5104-e267-4cd9-a350-1f565a25a1dd
-# ╠═b15c961f-fc62-4a38-ad58-fc29f2947491
+# ╟─b15c961f-fc62-4a38-ad58-fc29f2947491
