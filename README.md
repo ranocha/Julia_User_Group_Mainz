@@ -13,7 +13,8 @@ including a link to
 - 2026-06-11, TBD
 - 2026-05-28, TBD
 - 2026-05-14: no meeting (Christi Himmelfahrt)
-- 2026-04-30, TBD
+- 2026-04-30, Boris Kaus, Wrapping [PETSc](https://petsc.org/) in Julia: [PETSc.jl](https://github.com/JuliaParallel/PETSc.jl)
+  - We will start 15 minutes earlier than usual, i.e., at 12:00
 - 2026-04-16, Annalena Stroh, [Numerical modelling of diffusion-limited mineral growth for geospeedometry applications](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2511/egusphere-2025-2511.pdf)
 - 2026-02-05, TBD
 - 2026-01-22, Boris Kaus, Interaction of Julia with C/Fortran binaries and libraries
