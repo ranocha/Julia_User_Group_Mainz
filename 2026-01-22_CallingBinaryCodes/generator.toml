@@ -1,0 +1,7 @@
+[general]
+library_name = "lib_BinaryPlayground"
+output_file_path = "./BinaryPlayground_library.jl"
+module_name = "LibBinaryPlayground"
+prologue_file_path = "prologue.jl"
+#jll_pkg_name = "BinaryPlayground_jll"
+#export_symbol_prefixes = ["sum", "clang_"]
