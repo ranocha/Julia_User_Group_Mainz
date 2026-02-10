@@ -11,7 +11,8 @@ including a link to
 - 2026-07-09, TBD
 - 2026-06-25, TBD
 - 2026-06-11, TBD
-- 2026-05-28, TBD
+- 2026-05-28, Valentin Churavy, Debugging Julia on a low level: rr, segfaults etc.
+  - Xref https://github.com/JuliaSIMD/Polyester.jl/pull/168
 - 2026-05-14: no meeting (Christi Himmelfahrt)
 - 2026-04-30, Boris Kaus, Wrapping [PETSc](https://petsc.org/) in Julia: [PETSc.jl](https://github.com/JuliaParallel/PETSc.jl)
   - We will start 15 minutes earlier than usual, i.e., at 12:00
