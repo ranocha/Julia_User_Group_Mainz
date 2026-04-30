@@ -1,0 +1,65 @@
+# Finite Difference Laplacian
+#
+# In this example a simple finite difference, 1-D laplacian with Dirichlet
+# boundary conditions is solved first constructing the operator as Julia sparse
+# matrix then solving using PETsc
+
+using PETSc, MPI
+using SparseArrays: spdiagm
+using UnicodePlots: lineplot, lineplot!
+
+# Set our PETSc Scalar Type
+PetscScalar = Float64
+
+# Get the PETSc lib with our chosen `PetscScalar` type
+petsclib = PETSc.getlib(; PetscScalar = PetscScalar)
+
+# Initialize PETSc 
+PETSc.initialize(petsclib)
+
+# Initialize PETSc with logging active and printed to REPL. This is useful to detect memory leaks
+#PETSc.initialize(petsclib; log_view = true)    
+
+# Initialize PETSc with logging active and written to "logfile.txt"
+#PETSc.initialize(petsclib; log_view = true,  options=[":logfile.txt"])    # write log to a file
+
+
+# Set the total number of grid points
+Nq = 200
+
+# number of interior points
+n = Nq - 2
+
+# create the interior grid and get the grid spacing
+x = range(PetscScalar(0), length = Nq, stop = 1)[2:(end - 1)]
+Δx = PetscScalar(x.step)
+
+# Create the finite difference operator with zero Dirichlet boundary conditions
+A =
+    spdiagm(
+        -1 => -ones(PetscScalar, n - 1),
+        0 => 2ones(PetscScalar, n),
+        1 => -ones(PetscScalar, n - 1),
+    ) / Δx^2
+
+# Setup the exact solution and the forcing function
+κ = 2PetscScalar(π)
+u(x) = sin(κ * x)
+fl(x) = κ^2 * sin(κ * x)
+
+# Set up the PETSc solver
+ksp = PETSc.KSP(petsclib, MPI.COMM_SELF, A; ksp_monitor = true);
+
+# Solve the problem
+v = ksp \ fl.(x);
+
+# Compute the L2-error
+ϵ = sqrt(sum((v - u.(x)) .^ 2 * Δx))
+println("L2-error is $ϵ")
+
+# Plot the solution and error
+display(lineplot(x, v, xlabel = "x", ylabel = "solution"))
+display(lineplot(x, v - u.(x), xlabel = "x", ylabel = "error"))
+
+PETSc.destroy(ksp)
+PETSc.finalize(petsclib)
