@@ -8,7 +8,7 @@ including a link to
 
 ## List of talks
 
-- 2026-07-09, TBD
+- 2026-07-09, M3ODEL Lunch Talk instead of Julia User Group meeting
 - 2026-06-25, Valentin Churavy, Debugging Julia on a low level: rr, segfaults etc.
   - Xref https://github.com/JuliaSIMD/Polyester.jl/pull/168
 - 2026-06-11, M3ODEL Lunch Talk instead of Julia User Group meeting
