@@ -1,0 +1,5 @@
+[deps]
+PETSc = "ace2c81b-2b5f-4b1e-a30d-d662738edfe0"
+
+[sources]
+PETSc = {url = "https://github.com/JuliaParallel/PETSc.jl", rev = "943bd14"}
